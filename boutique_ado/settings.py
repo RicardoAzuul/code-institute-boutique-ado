@@ -73,6 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -152,7 +153,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)  # should be a tuple
 
 MEDIA_URL = '/media/'  # where all media files can be found
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # the dir where all media can be found 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # the dir where all media can be found
+
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
 
 
 # Default primary key field type
