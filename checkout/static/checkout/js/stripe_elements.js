@@ -49,6 +49,7 @@ card.addEventListener('change', function (event) {
 // Handle form submit
 var form = document.getElementById('payment-form');
 
+// On submit, we disable submit functionality so the user can't submit multiple times and causes errors or double charging
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     card.update({
