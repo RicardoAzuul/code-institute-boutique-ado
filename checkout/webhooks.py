@@ -16,7 +16,6 @@ def webhook(request):
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
