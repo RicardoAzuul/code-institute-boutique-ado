@@ -19,5 +19,8 @@ from . import views
 
 urlpatterns = [
     path('', views.all_products, name='products'),
-    path('<product_id>', views.product_detail, name='product_detail'),
+    # int: in below is to differentiate between product_id and /add, because otherwise Django
+    # thinks /add is a product_id
+    path('<int:product_id>/', views.product_detail, name='product_detail'),
+    path('add/', views.add_product, name='add_product'),
 ]
